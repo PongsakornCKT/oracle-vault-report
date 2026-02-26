@@ -1,15 +1,15 @@
 {
-  "generated": "2026-02-26T07:59:02.686Z",
+  "generated": "2026-02-26T13:57:53.563Z",
   "totalRepos": 332,
   "totalWithPsi": 78,
   "totalSymlinked": 58,
   "totalReal": 9,
   "totalWorktrees": 11,
   "totalNeedSync": 20,
-  "totalMdInVault": 18143,
-  "totalVaultProjects": 57,
+  "totalMdInVault": 18283,
+  "totalVaultProjects": 59,
   "totalVaultOrgs": 8,
-  "vaultSize": 148328448,
+  "vaultSize": 149553152,
   "skills": [
     "awaken",
     "birth",
@@ -102,6 +102,11 @@
     },
     {
       "org": "soul-brews-studio",
+      "project": "shrimp-oracle",
+      "mdCount": 186
+    },
+    {
+      "org": "soul-brews-studio",
       "project": "oracle-v2",
       "mdCount": 167
     },
@@ -117,18 +122,13 @@
     },
     {
       "org": "soul-brews-studio",
-      "project": "shrimp-oracle",
-      "mdCount": 138
-    },
-    {
-      "org": "soul-brews-studio",
       "project": "phukhao-oracle",
       "mdCount": 132
     },
     {
       "org": "laris-co",
       "project": "fireman-oracle",
-      "mdCount": 116
+      "mdCount": 126
     },
     {
       "org": "laris-co",
@@ -147,23 +147,28 @@
     },
     {
       "org": "laris-co",
+      "project": "arthur-oracle",
+      "mdCount": 98
+    },
+    {
+      "org": "laris-co",
       "project": "thong-pradit-brewing-oracle",
       "mdCount": 69
     },
     {
-      "org": "laris-co",
-      "project": "hermes-oracle",
-      "mdCount": 61
-    },
-    {
       "org": "nazt",
       "project": "hello-oracle",
-      "mdCount": 59
+      "mdCount": 60
     },
     {
       "org": "laris-co",
       "project": "clawdacle",
       "mdCount": 56
+    },
+    {
+      "org": "laris-co",
+      "project": "hermes-oracle",
+      "mdCount": 47
     },
     {
       "org": "laris-co",
@@ -241,11 +246,6 @@
       "mdCount": 13
     },
     {
-      "org": "laris-co",
-      "project": "odin-oracle",
-      "mdCount": 11
-    },
-    {
       "org": "dryoungdo-wellness-clinic",
       "project": "mycelium-oracle",
       "mdCount": 10
@@ -254,6 +254,11 @@
       "org": "laris-co",
       "project": "nat-garmin-data",
       "mdCount": 10
+    },
+    {
+      "org": "laris-co",
+      "project": "odin-oracle",
+      "mdCount": 8
     },
     {
       "org": "nazt",
@@ -329,18 +334,23 @@
       "org": "soul-brews-studio",
       "project": "oracle-voice-tray",
       "mdCount": 1
+    },
+    {
+      "org": "laris-co",
+      "project": "mission-04-hooks-challenge",
+      "mdCount": 0
     }
   ],
   "orgList": [
     {
       "org": "laris-co",
-      "projects": 29,
-      "mdCount": 13306
+      "projects": 31,
+      "mdCount": 13397
     },
     {
       "org": "soul-brews-studio",
       "projects": 15,
-      "mdCount": 4312
+      "mdCount": 4360
     },
     {
       "org": "arthur-oracle-ai",
@@ -355,7 +365,7 @@
     {
       "org": "nazt",
       "projects": 5,
-      "mdCount": 93
+      "mdCount": 94
     },
     {
       "org": "maeon-lab",
