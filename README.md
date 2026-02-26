@@ -12,6 +12,19 @@ OLED dark-mode dashboard for the Oracle ψ/ memory structure.
 - Rsync-eligible repos
 - Oracle skills inventory
 
+## Quick Start
+
+```bash
+# Clone
+ghq get -p Soul-Brews-Studio/oracle-vault-report
+
+# Generate
+node generate.mjs
+
+# Open
+open index.html
+```
+
 ## Usage
 
 ```bash
@@ -22,17 +35,34 @@ node generate.mjs
 node generate.mjs --push
 ```
 
-### Requirements
+## Requirements
 
-- Node.js 18+
+- Node.js 18+ (zero dependencies)
 - [ghq](https://github.com/x-motemen/ghq) for repo management
 - Repos with `ψ/` directories (Oracle memory structure)
 
-### Vault detection
+## Vault detection
+
+The generator auto-detects your vault — no hardcoded org names:
 
 1. `$ORACLE_VAULT_PATH` env var
-2. ghq repo matching `*oracle-vault`
-3. No vault = shows ψ/ scan only
+2. ghq repo matching `*oracle-vault` (not `*-report`)
+3. No vault = shows ψ/ scan only (still works)
+
+## Architecture
+
+```
+oracle-v2              — MCP server, indexer, CLI (the engine)
+your-org/oracle-vault  — your private knowledge store (the brain)
+oracle-vault-report    — this repo: dashboard generator (the eyes)
+```
+
+Each subscriber brings their own vault. No assumptions about org names.
+
+## For AI agents
+
+- `SKILL.md` — Oracle skill format (Claude Code, etc.)
+- `AGENT.md` — Universal prompt for any AI coding agent
 
 ## No secrets
 
