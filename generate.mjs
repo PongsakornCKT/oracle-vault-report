@@ -180,8 +180,34 @@ if (process.argv.includes('--push')) {
 // ── Helpers ──────────────────────────────────────────────────────────────────
 
 function tryExec(cmd) { try { return execSync(cmd, { encoding: 'utf-8' }).trim(); } catch { return null; } }
-function countMd(dir) { try { return parseInt(execSync(`find "${dir}" -name '*.md' 2>/dev/null | wc -l`, { encoding: 'utf-8' }).trim()) || 0; } catch { return 0; } }
-function dirSize(dir) { try { return (parseInt(execSync(`du -sk "${dir}" 2>/dev/null`, { encoding: 'utf-8' }).trim().split('\t')[0]) || 0) * 1024; } catch { return 0; } }
+function countMd(dir) {
+  let count = 0;
+  try {
+    const walk = (d) => {
+      for (const entry of readdirSync(d, { withFileTypes: true })) {
+        const full = join(d, entry.name);
+        if (entry.isDirectory()) walk(full);
+        else if (entry.name.endsWith('.md')) count++;
+      }
+    };
+    walk(dir);
+  } catch {}
+  return count;
+}
+function dirSize(dir) {
+  let total = 0;
+  try {
+    const walk = (d) => {
+      for (const entry of readdirSync(d, { withFileTypes: true })) {
+        const full = join(d, entry.name);
+        if (entry.isDirectory()) walk(full);
+        else total += statSync(full).size;
+      }
+    };
+    walk(dir);
+  } catch {}
+  return total;
+}
 function fmt(n) { if (n >= 1e9) return (n/1e9).toFixed(2)+'B'; if (n >= 1e6) return (n/1e6).toFixed(1)+'M'; if (n >= 1e3) return (n/1e3).toFixed(1)+'K'; return n.toString(); }
 function fmtSize(b) { if (b >= 1e9) return (b/1e9).toFixed(1)+' GB'; if (b >= 1e6) return (b/1e6).toFixed(1)+' MB'; if (b >= 1e3) return (b/1e3).toFixed(1)+' KB'; return b+' B'; }
 function pct(p, w) { return w ? ((p/w)*100).toFixed(1) : '0'; }
